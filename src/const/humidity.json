@@ -1,0 +1,975 @@
+{
+    "living_room_humidity":
+    [
+        {
+            "indicator_id": "1",
+            "measurement_time": "00:00",
+            "calendar_date": "2024-04-22",
+            "value": 45
+        },
+        {
+            "indicator_id": "2",
+            "measurement_time": "00:30",
+            "calendar_date": "2024-04-22",
+            "value": 44
+        },
+        {
+            "indicator_id": "3",
+            "measurement_time": "01:00",
+            "calendar_date": "2024-04-22",
+            "value": 43
+        },
+        {
+            "indicator_id": "4",
+            "measurement_time": "01:30",
+            "calendar_date": "2024-04-22",
+            "value": 42
+        },
+        {
+            "indicator_id": "5",
+            "measurement_time": "02:00",
+            "calendar_date": "2024-04-22",
+            "value": 41
+        },
+        {
+            "indicator_id": "6",
+            "measurement_time": "02:30",
+            "calendar_date": "2024-04-22",
+            "value": 40
+        },
+        {
+            "indicator_id": "25",
+            "measurement_time": "03:00",
+            "calendar_date": "2024-04-22",
+            "value": 39
+        },
+        {
+            "indicator_id": "26",
+            "measurement_time": "03:30",
+            "calendar_date": "2024-04-22",
+            "value": 38
+        },
+        {
+            "indicator_id": "27",
+            "measurement_time": "04:00",
+            "calendar_date": "2024-04-22",
+            "value": 37
+        },
+        {
+            "indicator_id": "28",
+            "measurement_time": "04:30",
+            "calendar_date": "2024-04-22",
+            "value": 36
+        },
+        {
+            "indicator_id": "29",
+            "measurement_time": "05:00",
+            "calendar_date": "2024-04-22",
+            "value": 35
+        },
+        {
+            "indicator_id": "30",
+            "measurement_time": "05:30",
+            "calendar_date": "2024-04-22",
+            "value": 34
+        },
+        {
+            "indicator_id": "25",
+            "measurement_time": "06:00",
+            "calendar_date": "2024-04-22",
+            "value": 39
+        },
+        {
+            "indicator_id": "26",
+            "measurement_time": "06:30",
+            "calendar_date": "2024-04-22",
+            "value": 38
+        },
+        {
+            "indicator_id": "27",
+            "measurement_time": "07:00",
+            "calendar_date": "2024-04-22",
+            "value": 37
+        },
+        {
+            "indicator_id": "28",
+            "measurement_time": "07:30",
+            "calendar_date": "2024-04-22",
+            "value": 36
+        },
+        {
+            "indicator_id": "29",
+            "measurement_time": "08:00",
+            "calendar_date": "2024-04-22",
+            "value": 35
+        },
+        {
+            "indicator_id": "30",
+            "measurement_time": "08:30",
+            "calendar_date": "2024-04-22",
+            "value": 34
+        },
+        {
+            "indicator_id": "48",
+            "measurement_time": "09:00",
+            "calendar_date": "2024-04-22",
+            "value": 40
+        },
+        {
+            "indicator_id": "49",
+            "measurement_time": "09:30",
+            "calendar_date": "2024-04-22",
+            "value": 41
+        },
+        {
+            "indicator_id": "1",
+            "measurement_time": "10:00",
+            "calendar_date": "2024-04-22",
+            "value": 45
+        },
+        {
+            "indicator_id": "2",
+            "measurement_time": "10:30",
+            "calendar_date": "2024-04-22",
+            "value": 44
+        },
+        {
+            "indicator_id": "3",
+            "measurement_time": "11:00",
+            "calendar_date": "2024-04-22",
+            "value": 43
+        },
+        {
+            "indicator_id": "4",
+            "measurement_time": "11:30",
+            "calendar_date": "2024-04-22",
+            "value": 42
+        },
+        {
+            "indicator_id": "5",
+            "measurement_time": "12:00",
+            "calendar_date": "2024-04-22",
+            "value": 41
+        },
+        {
+            "indicator_id": "6",
+            "measurement_time": "12:30",
+            "calendar_date": "2024-04-22",
+            "value": 40
+        },
+        {
+            "indicator_id": "25",
+            "measurement_time": "13:00",
+            "calendar_date": "2024-04-22",
+            "value": 39
+        },
+        {
+            "indicator_id": "26",
+            "measurement_time": "13:30",
+            "calendar_date": "2024-04-22",
+            "value": 38
+        },
+        {
+            "indicator_id": "27",
+            "measurement_time": "14:00",
+            "calendar_date": "2024-04-22",
+            "value": 37
+        },
+        {
+            "indicator_id": "28",
+            "measurement_time": "14:30",
+            "calendar_date": "2024-04-22",
+            "value": 36
+        },
+        {
+            "indicator_id": "29",
+            "measurement_time": "15:00",
+            "calendar_date": "2024-04-22",
+            "value": 35
+        },
+        {
+            "indicator_id": "30",
+            "measurement_time": "15:30",
+            "calendar_date": "2024-04-22",
+            "value": 34
+        },
+        {
+            "indicator_id": "25",
+            "measurement_time": "16:00",
+            "calendar_date": "2024-04-22",
+            "value": 39
+        },
+        {
+            "indicator_id": "26",
+            "measurement_time": "16:30",
+            "calendar_date": "2024-04-22",
+            "value": 38
+        },
+        {
+            "indicator_id": "27",
+            "measurement_time": "17:00",
+            "calendar_date": "2024-04-22",
+            "value": 37
+        },
+        {
+            "indicator_id": "28",
+            "measurement_time": "17:30",
+            "calendar_date": "2024-04-22",
+            "value": 36
+        },
+        {
+            "indicator_id": "29",
+            "measurement_time": "18:00",
+            "calendar_date": "2024-04-22",
+            "value": 35
+        },
+        {
+            "indicator_id": "30",
+            "measurement_time": "18:30",
+            "calendar_date": "2024-04-22",
+            "value": 34
+        },
+        {
+            "indicator_id": "48",
+            "measurement_time": "19:00",
+            "calendar_date": "2024-04-22",
+            "value": 40
+        },
+        {
+            "indicator_id": "49",
+            "measurement_time": "19:30",
+            "calendar_date": "2024-04-22",
+            "value": 41
+        }
+    ],
+  "kitchen_humidity":
+  [
+    {
+      "indicator_id": "1",
+      "measurement_time": "00:00",
+      "calendar_date": "2024-04-22",
+      "value": 45
+    },
+    {
+      "indicator_id": "2",
+      "measurement_time": "00:30",
+      "calendar_date": "2024-04-22",
+      "value": 44
+    },
+    {
+      "indicator_id": "3",
+      "measurement_time": "01:00",
+      "calendar_date": "2024-04-22",
+      "value": 43
+    },
+    {
+      "indicator_id": "4",
+      "measurement_time": "01:30",
+      "calendar_date": "2024-04-22",
+      "value": 42
+    },
+    {
+      "indicator_id": "5",
+      "measurement_time": "02:00",
+      "calendar_date": "2024-04-22",
+      "value": 41
+    },
+    {
+      "indicator_id": "6",
+      "measurement_time": "02:30",
+      "calendar_date": "2024-04-22",
+      "value": 40
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "03:00",
+      "calendar_date": "2024-04-22",
+      "value": 39
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "03:30",
+      "calendar_date": "2024-04-22",
+      "value": 38
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "04:00",
+      "calendar_date": "2024-04-22",
+      "value": 37
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "04:30",
+      "calendar_date": "2024-04-22",
+      "value": 36
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "05:00",
+      "calendar_date": "2024-04-22",
+      "value": 35
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "05:30",
+      "calendar_date": "2024-04-22",
+      "value": 34
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "06:00",
+      "calendar_date": "2024-04-22",
+      "value": 39
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "06:30",
+      "calendar_date": "2024-04-22",
+      "value": 38
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "07:00",
+      "calendar_date": "2024-04-22",
+      "value": 37
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "07:30",
+      "calendar_date": "2024-04-22",
+      "value": 36
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "08:00",
+      "calendar_date": "2024-04-22",
+      "value": 35
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "08:30",
+      "calendar_date": "2024-04-22",
+      "value": 34
+    },
+    {
+      "indicator_id": "48",
+      "measurement_time": "09:00",
+      "calendar_date": "2024-04-22",
+      "value": 40
+    },
+    {
+      "indicator_id": "49",
+      "measurement_time": "09:30",
+      "calendar_date": "2024-04-22",
+      "value": 41
+    },
+    {
+      "indicator_id": "1",
+      "measurement_time": "10:00",
+      "calendar_date": "2024-04-22",
+      "value": 45
+    },
+    {
+      "indicator_id": "2",
+      "measurement_time": "10:30",
+      "calendar_date": "2024-04-22",
+      "value": 44
+    },
+    {
+      "indicator_id": "3",
+      "measurement_time": "11:00",
+      "calendar_date": "2024-04-22",
+      "value": 43
+    },
+    {
+      "indicator_id": "4",
+      "measurement_time": "11:30",
+      "calendar_date": "2024-04-22",
+      "value": 42
+    },
+    {
+      "indicator_id": "5",
+      "measurement_time": "12:00",
+      "calendar_date": "2024-04-22",
+      "value": 41
+    },
+    {
+      "indicator_id": "6",
+      "measurement_time": "12:30",
+      "calendar_date": "2024-04-22",
+      "value": 40
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "13:00",
+      "calendar_date": "2024-04-22",
+      "value": 39
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "13:30",
+      "calendar_date": "2024-04-22",
+      "value": 38
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "14:00",
+      "calendar_date": "2024-04-22",
+      "value": 37
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "14:30",
+      "calendar_date": "2024-04-22",
+      "value": 36
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "15:00",
+      "calendar_date": "2024-04-22",
+      "value": 35
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "15:30",
+      "calendar_date": "2024-04-22",
+      "value": 34
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "16:00",
+      "calendar_date": "2024-04-22",
+      "value": 39
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "16:30",
+      "calendar_date": "2024-04-22",
+      "value": 38
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "17:00",
+      "calendar_date": "2024-04-22",
+      "value": 37
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "17:30",
+      "calendar_date": "2024-04-22",
+      "value": 36
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "18:00",
+      "calendar_date": "2024-04-22",
+      "value": 35
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "18:30",
+      "calendar_date": "2024-04-22",
+      "value": 34
+    },
+    {
+      "indicator_id": "48",
+      "measurement_time": "19:00",
+      "calendar_date": "2024-04-22",
+      "value": 40
+    },
+    {
+      "indicator_id": "49",
+      "measurement_time": "19:30",
+      "calendar_date": "2024-04-22",
+      "value": 41
+    }
+  ],
+  "bedroom_humidity":
+  [
+    {
+      "indicator_id": "1",
+      "measurement_time": "00:00",
+      "calendar_date": "2024-04-22",
+      "value": 45
+    },
+    {
+      "indicator_id": "2",
+      "measurement_time": "00:30",
+      "calendar_date": "2024-04-22",
+      "value": 44
+    },
+    {
+      "indicator_id": "3",
+      "measurement_time": "01:00",
+      "calendar_date": "2024-04-22",
+      "value": 43
+    },
+    {
+      "indicator_id": "4",
+      "measurement_time": "01:30",
+      "calendar_date": "2024-04-22",
+      "value": 42
+    },
+    {
+      "indicator_id": "5",
+      "measurement_time": "02:00",
+      "calendar_date": "2024-04-22",
+      "value": 41
+    },
+    {
+      "indicator_id": "6",
+      "measurement_time": "02:30",
+      "calendar_date": "2024-04-22",
+      "value": 40
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "03:00",
+      "calendar_date": "2024-04-22",
+      "value": 39
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "03:30",
+      "calendar_date": "2024-04-22",
+      "value": 38
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "04:00",
+      "calendar_date": "2024-04-22",
+      "value": 37
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "04:30",
+      "calendar_date": "2024-04-22",
+      "value": 36
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "05:00",
+      "calendar_date": "2024-04-22",
+      "value": 35
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "05:30",
+      "calendar_date": "2024-04-22",
+      "value": 34
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "06:00",
+      "calendar_date": "2024-04-22",
+      "value": 39
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "06:30",
+      "calendar_date": "2024-04-22",
+      "value": 38
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "07:00",
+      "calendar_date": "2024-04-22",
+      "value": 37
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "07:30",
+      "calendar_date": "2024-04-22",
+      "value": 36
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "08:00",
+      "calendar_date": "2024-04-22",
+      "value": 35
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "08:30",
+      "calendar_date": "2024-04-22",
+      "value": 34
+    },
+    {
+      "indicator_id": "48",
+      "measurement_time": "09:00",
+      "calendar_date": "2024-04-22",
+      "value": 40
+    },
+    {
+      "indicator_id": "49",
+      "measurement_time": "09:30",
+      "calendar_date": "2024-04-22",
+      "value": 41
+    },
+    {
+      "indicator_id": "1",
+      "measurement_time": "10:00",
+      "calendar_date": "2024-04-22",
+      "value": 45
+    },
+    {
+      "indicator_id": "2",
+      "measurement_time": "10:30",
+      "calendar_date": "2024-04-22",
+      "value": 44
+    },
+    {
+      "indicator_id": "3",
+      "measurement_time": "11:00",
+      "calendar_date": "2024-04-22",
+      "value": 43
+    },
+    {
+      "indicator_id": "4",
+      "measurement_time": "11:30",
+      "calendar_date": "2024-04-22",
+      "value": 42
+    },
+    {
+      "indicator_id": "5",
+      "measurement_time": "12:00",
+      "calendar_date": "2024-04-22",
+      "value": 41
+    },
+    {
+      "indicator_id": "6",
+      "measurement_time": "12:30",
+      "calendar_date": "2024-04-22",
+      "value": 40
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "13:00",
+      "calendar_date": "2024-04-22",
+      "value": 39
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "13:30",
+      "calendar_date": "2024-04-22",
+      "value": 38
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "14:00",
+      "calendar_date": "2024-04-22",
+      "value": 37
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "14:30",
+      "calendar_date": "2024-04-22",
+      "value": 36
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "15:00",
+      "calendar_date": "2024-04-22",
+      "value": 35
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "15:30",
+      "calendar_date": "2024-04-22",
+      "value": 34
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "16:00",
+      "calendar_date": "2024-04-22",
+      "value": 39
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "16:30",
+      "calendar_date": "2024-04-22",
+      "value": 38
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "17:00",
+      "calendar_date": "2024-04-22",
+      "value": 37
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "17:30",
+      "calendar_date": "2024-04-22",
+      "value": 36
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "18:00",
+      "calendar_date": "2024-04-22",
+      "value": 35
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "18:30",
+      "calendar_date": "2024-04-22",
+      "value": 34
+    },
+    {
+      "indicator_id": "48",
+      "measurement_time": "19:00",
+      "calendar_date": "2024-04-22",
+      "value": 40
+    },
+    {
+      "indicator_id": "49",
+      "measurement_time": "19:30",
+      "calendar_date": "2024-04-22",
+      "value": 41
+    }
+  ],
+  "bathroom_humidity":
+  [
+    {
+      "indicator_id": "1",
+      "measurement_time": "00:00",
+      "calendar_date": "2024-04-22",
+      "value": 70
+    },
+    {
+      "indicator_id": "2",
+      "measurement_time": "00:30",
+      "calendar_date": "2024-04-22",
+      "value": 74
+    },
+    {
+      "indicator_id": "3",
+      "measurement_time": "01:00",
+      "calendar_date": "2024-04-22",
+      "value": 73
+    },
+    {
+      "indicator_id": "4",
+      "measurement_time": "01:30",
+      "calendar_date": "2024-04-22",
+      "value": 72
+    },
+    {
+      "indicator_id": "5",
+      "measurement_time": "02:00",
+      "calendar_date": "2024-04-22",
+      "value": 71
+    },
+    {
+      "indicator_id": "6",
+      "measurement_time": "02:30",
+      "calendar_date": "2024-04-22",
+      "value": 70
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "03:00",
+      "calendar_date": "2024-04-22",
+      "value": 79
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "03:30",
+      "calendar_date": "2024-04-22",
+      "value": 78
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "04:00",
+      "calendar_date": "2024-04-22",
+      "value": 77
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "04:30",
+      "calendar_date": "2024-04-22",
+      "value": 76
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "05:00",
+      "calendar_date": "2024-04-22",
+      "value": 75
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "05:30",
+      "calendar_date": "2024-04-22",
+      "value": 74
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "06:00",
+      "calendar_date": "2024-04-22",
+      "value": 79
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "06:30",
+      "calendar_date": "2024-04-22",
+      "value": 78
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "07:00",
+      "calendar_date": "2024-04-22",
+      "value": 77
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "07:30",
+      "calendar_date": "2024-04-22",
+      "value": 76
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "08:00",
+      "calendar_date": "2024-04-22",
+      "value": 75
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "08:30",
+      "calendar_date": "2024-04-22",
+      "value": 74
+    },
+    {
+      "indicator_id": "48",
+      "measurement_time": "09:00",
+      "calendar_date": "2024-04-22",
+      "value": 70
+    },
+    {
+      "indicator_id": "49",
+      "measurement_time": "09:30",
+      "calendar_date": "2024-04-22",
+      "value": 71
+    },
+    {
+      "indicator_id": "1",
+      "measurement_time": "10:00",
+      "calendar_date": "2024-04-22",
+      "value": 75
+    },
+    {
+      "indicator_id": "2",
+      "measurement_time": "10:30",
+      "calendar_date": "2024-04-22",
+      "value": 74
+    },
+    {
+      "indicator_id": "3",
+      "measurement_time": "11:00",
+      "calendar_date": "2024-04-22",
+      "value": 73
+    },
+    {
+      "indicator_id": "4",
+      "measurement_time": "11:30",
+      "calendar_date": "2024-04-22",
+      "value": 72
+    },
+    {
+      "indicator_id": "5",
+      "measurement_time": "12:00",
+      "calendar_date": "2024-04-22",
+      "value": 71
+    },
+    {
+      "indicator_id": "6",
+      "measurement_time": "12:30",
+      "calendar_date": "2024-04-22",
+      "value": 70
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "13:00",
+      "calendar_date": "2024-04-22",
+      "value": 79
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "13:30",
+      "calendar_date": "2024-04-22",
+      "value": 78
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "14:00",
+      "calendar_date": "2024-04-22",
+      "value": 77
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "14:30",
+      "calendar_date": "2024-04-22",
+      "value": 76
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "15:00",
+      "calendar_date": "2024-04-22",
+      "value": 75
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "15:30",
+      "calendar_date": "2024-04-22",
+      "value": 74
+    },
+    {
+      "indicator_id": "25",
+      "measurement_time": "16:00",
+      "calendar_date": "2024-04-22",
+      "value": 79
+    },
+    {
+      "indicator_id": "26",
+      "measurement_time": "16:30",
+      "calendar_date": "2024-04-22",
+      "value": 78
+    },
+    {
+      "indicator_id": "27",
+      "measurement_time": "17:00",
+      "calendar_date": "2024-04-22",
+      "value": 77
+    },
+    {
+      "indicator_id": "28",
+      "measurement_time": "17:30",
+      "calendar_date": "2024-04-22",
+      "value": 76
+    },
+    {
+      "indicator_id": "29",
+      "measurement_time": "18:00",
+      "calendar_date": "2024-04-22",
+      "value": 75
+    },
+    {
+      "indicator_id": "30",
+      "measurement_time": "18:30",
+      "calendar_date": "2024-04-22",
+      "value": 74
+    },
+    {
+      "indicator_id": "48",
+      "measurement_time": "19:00",
+      "calendar_date": "2024-04-22",
+      "value": 70
+    },
+    {
+      "indicator_id": "49",
+      "measurement_time": "19:30",
+      "calendar_date": "2024-04-22",
+      "value": 71
+    }
+  ]
+
+}
