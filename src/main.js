@@ -9,7 +9,9 @@ import '@layouts/styles/index.scss'
 import '@styles/styles.scss'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
+import axios from 'axios'
 
+axios.defaults.baseURL = 'http://localhost:5001/auth'
 loadFonts()
 
 
