@@ -1,15 +1,14 @@
-const User = require("./models/User")
+const User = require("../models/UserModel")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
-const { secret } = require("./config")
+const { secret } = require("../config")
 
 
-const generateAccessToken = (id) => {
+const generateAccessToken = id => {
   const payload = {
-    id
+    id,
   }
 
-  
   return jwt.sign(payload, secret, { expiresIn: "24h" })
 }
 
@@ -19,7 +18,8 @@ class authController {
       const { username, email, password } =
         req.body
 
-        console.log( username, email, password)
+      console.log( username, email, password)
+
       const candidate = await User.findOne({ email })
       if (candidate) {
         return res
