@@ -1,262 +1,234 @@
 <script setup>
 import VueApexCharts from 'vue3-apexcharts'
-import { useTheme } from 'vuetify'
-import statsVerticalChart from '@images/cards/chart-success.png'
-import statsVerticalPaypal from '@images/cards/paypal-error.png'
-import statsVerticalWallet from '@images/cards/wallet-primary.png'
-import { hexToRgb } from '@layouts/utils'
+import {useTheme} from 'vuetify'
 
-const vuetifyTheme = useTheme()
+const series = [
+  {
+    type: 'rangeArea',
+    name: 'Team B Range',
 
-const series = {
-  income: [{
     data: [
-      24,
-      21,
-      30,
-      22,
-      42,
-      26,
-      35,
-      29,
-    ],
-  }],
-  expenses: [{
+      {
+        x: 'Jan',
+        y: [1100, 1900]
+      },
+      {
+        x: 'Feb',
+        y: [1200, 1800]
+      },
+      {
+        x: 'Mar',
+        y: [900, 2900]
+      },
+      {
+        x: 'Apr',
+        y: [1400, 2700]
+      },
+      {
+        x: 'May',
+        y: [2600, 3900]
+      },
+      {
+        x: 'Jun',
+        y: [500, 1700]
+      },
+      {
+        x: 'Jul',
+        y: [1900, 2300]
+      },
+      {
+        x: 'Aug',
+        y: [1000, 1500]
+      }
+    ]
+  },
+
+  {
+    type: 'rangeArea',
+    name: 'Team A Range',
     data: [
-      24,
-      21,
-      30,
-      25,
-      42,
-      26,
-      35,
-      29,
-    ],
-  }],
-  profit: [{
+      {
+        x: 'Jan',
+        y: [3100, 3400]
+      },
+      {
+        x: 'Feb',
+        y: [4200, 5200]
+      },
+      {
+        x: 'Mar',
+        y: [3900, 4900]
+      },
+      {
+        x: 'Apr',
+        y: [3400, 3900]
+      },
+      {
+        x: 'May',
+        y: [5100, 5900]
+      },
+      {
+        x: 'Jun',
+        y: [5400, 6700]
+      },
+      {
+        x: 'Jul',
+        y: [4300, 4600]
+      },
+      {
+        x: 'Aug',
+        y: [2100, 2900]
+      }
+    ]
+  },
+
+  {
+    type: 'line',
+    name: 'Team B Median',
     data: [
-      24,
-      21,
-      30,
-      22,
-      42,
-      26,
-      35,
-      35,
-    ],
-  }],
+      {
+        x: 'Jan',
+        y: 1500
+      },
+      {
+        x: 'Feb',
+        y: 1700
+      },
+      {
+        x: 'Mar',
+        y: 1900
+      },
+      {
+        x: 'Apr',
+        y: 2200
+      },
+      {
+        x: 'May',
+        y: 3000
+      },
+      {
+        x: 'Jun',
+        y: 1000
+      },
+      {
+        x: 'Jul',
+        y: 2100
+      },
+      {
+        x: 'Aug',
+        y: 1200
+      },
+      {
+        x: 'Sep',
+        y: 1800
+      },
+      {
+        x: 'Oct',
+        y: 2000
+      }
+    ]
+  },
+  {
+    type: 'line',
+    name: 'Team A Median',
+    data: [
+      {
+        x: 'Jan',
+        y: 3300
+      },
+      {
+        x: 'Feb',
+        y: 4900
+      },
+      {
+        x: 'Mar',
+        y: 4300
+      },
+      {
+        x: 'Apr',
+        y: 3700
+      },
+      {
+        x: 'May',
+        y: 5500
+      },
+      {
+        x: 'Jun',
+        y: 5900
+      },
+      {
+        x: 'Jul',
+        y: 4500
+      },
+      {
+        x: 'Aug',
+        y: 2400
+      },
+      {
+        x: 'Sep',
+        y: 2100
+      },
+      {
+        x: 'Oct',
+        y: 1500
+      }
+    ]
+  }
+]
+const chartOptions = {
+  chart: {
+    height: 350,
+      type: 'rangeArea',
+      animations: {
+      speed: 500
+    }
+  },
+  colors: ['#d4526e', '#33b2df', '#d4526e', '#33b2df'],
+    dataLabels: {
+    enabled: false
+  },
+  fill: {
+    opacity: [0.24, 0.24, 1, 1]
+  },
+  forecastDataPoints: {
+    count: 2
+  },
+  stroke: {
+    curve: 'straight',
+      width: [0, 0, 2, 2]
+  },
+  legend: {
+    show: true,
+      customLegendItems: ['Team B', 'Team A'],
+      inverseOrder: true
+  },
+  title: {
+    text: 'Range Area with Forecast Line (Combo)'
+  },
+  markers: {
+    hover: {
+      sizeOffset: 5
+    }
+  }
 }
-
-const currentTab = ref('income')
-
-const tabData = computed(() => {
-  const data = {
-    income: {
-      avatar: statsVerticalWallet,
-      title: 'Total Income',
-      stats: '$459.1k',
-      profitLoss: 65,
-      profitLossAmount: '6.5k',
-      compareToLastWeek: '$39k',
-    },
-    expenses: {
-      avatar: statsVerticalPaypal,
-      title: 'Total Expenses',
-      stats: '$316.5k',
-      profitLoss: 27.8,
-      profitLossAmount: '7.2k',
-      compareToLastWeek: '$16k',
-    },
-    profit: {
-      avatar: statsVerticalChart,
-      title: 'Total Profit',
-      stats: '$147.9k',
-      profitLoss: 35.1,
-      profitLossAmount: '4.5k',
-      compareToLastWeek: '$28k',
-    },
-  }
-  
-  return data[currentTab.value]
-})
-
-const chartConfig = computed(() => {
-  const currentTheme = vuetifyTheme.current.value.colors
-  const variableTheme = vuetifyTheme.current.value.variables
-  const disabledTextColor = `rgba(${ hexToRgb(String(currentTheme['on-surface'])) },${ variableTheme['disabled-opacity'] })`
-  const borderColor = `rgba(${ hexToRgb(String(variableTheme['border-color'])) },${ variableTheme['border-opacity'] })`
-  
-  return {
-    chart: {
-      parentHeightOffset: 0,
-      toolbar: { show: false },
-    },
-    dataLabels: { enabled: false },
-    stroke: {
-      width: 3,
-      curve: 'smooth',
-    },
-    grid: {
-      strokeDashArray: 4.5,
-      borderColor,
-      padding: {
-        left: 0,
-        top: -20,
-        right: 11,
-        bottom: 7,
-      },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        opacityTo: 0.25,
-        opacityFrom: 0.5,
-        stops: [
-          0,
-          95,
-          100,
-        ],
-        shadeIntensity: 0.6,
-        colorStops: [[
-          {
-            offset: 0,
-            opacity: 0.4,
-            color: currentTheme.primary,
-          },
-          {
-            offset: 100,
-            opacity: 0.2,
-            color: currentTheme.surface,
-          },
-        ]],
-      },
-    },
-    theme: {
-      monochrome: {
-        enabled: true,
-        shadeTo: 'light',
-        shadeIntensity: 1,
-        color: currentTheme.primary,
-      },
-    },
-    xaxis: {
-      axisTicks: { show: false },
-      axisBorder: { show: false },
-      categories: [
-        '',
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-      ],
-      labels: {
-        style: {
-          fontSize: '14px',
-          colors: disabledTextColor,
-          fontFamily: 'Public Sans',
-        },
-      },
-    },
-    yaxis: {
-      min: 10,
-      max: 50,
-      show: false,
-      tickAmount: 4,
-    },
-    markers: {
-      size: 8,
-      strokeWidth: 6,
-      strokeOpacity: 1,
-      hover: { size: 8 },
-      colors: ['transparent'],
-      strokeColors: 'transparent',
-      discrete: [{
-        size: 8,
-        seriesIndex: 0,
-        fillColor: '#fff',
-        strokeColor: currentTheme.primary,
-        dataPointIndex: series[currentTab.value][0].data.length - 1,
-      }],
-    },
-  }
-})
 </script>
 
 <template>
   <VCard>
-    <VCardItem>
-      <VTabs
-        v-model="currentTab"
-        class="v-tabs-pill"
-      >
-        <VTab value="income">
-          Income
-        </VTab>
-        <VTab value="expenses">
-          Expenses
-        </VTab>
-        <VTab value="profit">
-          Profit
-        </VTab>
-      </VTabs>
+    <VCardItem class="pb-3">
+      <VCardTitle class="mb-1">
+        Order Statistics
+      </VCardTitle>
+      <VCardSubtitle>42.82k Total Sales</VCardSubtitle>
     </VCardItem>
-
-    <VCardText class="d-flex align-center gap-3">
-      <VAvatar
-        size="46"
-        rounded
-        :image="tabData.avatar"
-      />
-
-      <div>
-        <p class="mb-0">
-          {{ tabData.title }}
-        </p>
-        <div class="d-flex align-center gap-2">
-          <h6 class="text-h6">
-            {{ tabData.stats }}
-          </h6>
-          <span
-            class="text-sm"
-            :class="tabData.profitLoss > 0 ? 'text-success' : 'text-error'"
-          >
-            <VIcon
-              size="24"
-              icon="bx-chevron-up"
-            />
-            {{ tabData.profitLoss }}%
-          </span>
-        </div>
-      </div>
-    </VCardText>
-
-    <VCardText>
-      <VueApexCharts
-        type="area"
-        :height="241"
-        :options="chartConfig"
-        :series="series[currentTab]"
-      />
-    </VCardText>
-
-    <VCardText class="d-flex align-center justify-center gap-3">
-      <VProgressCircular
-        size="45"
-        :model-value="tabData.profitLoss"
-      >
-        <span class="text-xs text-medium-emphasis">{{ tabData.profitLossAmount }}</span>
-      </VProgressCircular>
-
-      <div>
-        <h6 class="text-base font-weight-regular">
-          <span class="text-capitalize">{{ currentTab }}</span>
-          <span> this week</span>
-        </h6>
-        <span class="text-sm text-disabled">{{ tabData.compareToLastWeek }} less than last week</span>
-      </div>
+    <VCardText class="px-0">
+      <img width="550" height="383" src="./img.png" alt="">
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.graphic {
+  background-image: url('img.png')
+}
+</style>

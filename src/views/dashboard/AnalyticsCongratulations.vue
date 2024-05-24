@@ -5,8 +5,8 @@ import { onMounted, ref, defineProps } from "vue"
 const props = defineProps({
   averageHumidity: {
     type: Number,
-    default: null,
-    required: true,
+    default: 0,
+    required: false,
   },
 })
 

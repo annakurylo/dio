@@ -5,117 +5,84 @@ import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
 
-const series = [
-  45,
-  80,
-  20,
-  40,
-]
+const series = [{
+  name: 'Inflation',
+  data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
+}]
 
 const chartOptions = computed(() => {
-  const currentTheme = vuetifyTheme.current.value.colors
-  const variableTheme = vuetifyTheme.current.value.variables
-  const disabledTextColor = `rgba(${ hexToRgb(String(currentTheme['on-surface'])) },${ variableTheme['disabled-opacity'] })`
-  const primaryTextColor = `rgba(${ hexToRgb(String(currentTheme['on-surface'])) },${ variableTheme['high-emphasis-opacity'] })`
-  
   return {
-    chart: {
-      sparkline: { enabled: true },
-      animations: { enabled: false },
-    },
-    stroke: {
-      width: 6,
-      colors: [currentTheme.surface],
-    },
-    legend: { show: false },
-    tooltip: { enabled: false },
-    dataLabels: { enabled: false },
-    labels: [
-      'Fashion',
-      'Electronic',
-      'Sports',
-      'Decor',
-    ],
-    colors: [
-      currentTheme.success,
-      currentTheme.primary,
-      currentTheme.secondary,
-      currentTheme.info,
-    ],
-    grid: {
-      padding: {
-        top: -7,
-        bottom: 5,
-      },
-    },
-    states: {
-      hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } },
-    },
     plotOptions: {
-      pie: {
-        expandOnClick: false,
-        donut: {
-          size: '75%',
-          labels: {
-            show: true,
-            name: {
-              offsetY: 17,
-              fontSize: '14px',
-              color: disabledTextColor,
-              fontFamily: 'Public Sans',
-            },
-            value: {
-              offsetY: -17,
-              fontSize: '24px',
-              color: primaryTextColor,
-              fontFamily: 'Public Sans',
-            },
-            total: {
-              show: true,
-              label: 'Weekly',
-              fontSize: '14px',
-              formatter: () => '38%',
-              color: disabledTextColor,
-              fontFamily: 'Public Sans',
-            },
-          },
+      bar: {
+        borderRadius: 10,
+        dataLabels: {
+          position: 'top', // top, center, bottom
         },
-      },
+      }
     },
+    dataLabels: {
+      enabled: true,
+      formatter: function (val) {
+        return val + "%";
+      },
+      offsetY: -20,
+      style: {
+        fontSize: '12px',
+        colors: ["#304758"]
+      }
+    },
+
+    xaxis: {
+      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      position: 'top',
+      axisBorder: {
+        show: false
+      },
+      axisTicks: {
+        show: false
+      },
+      crosshairs: {
+        fill: {
+          type: 'gradient',
+          gradient: {
+            colorFrom: '#D8E3F0',
+            colorTo: '#BED1E6',
+            stops: [0, 100],
+            opacityFrom: 0.4,
+            opacityTo: 0.5,
+          }
+        }
+      },
+      tooltip: {
+        enabled: true,
+      }
+    },
+    yaxis: {
+      axisBorder: {
+        show: false
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+        formatter: function (val) {
+          return val + "%";
+        }
+      }
+
+    },
+    title: {
+      text: 'Monthly Inflation in Argentina, 2002',
+      floating: true,
+      offsetY: 330,
+      align: 'center',
+      style: {
+        color: '#444'
+      }
+    }
   }
 })
-
-const orders = [
-  {
-    amount: '82.5k',
-    title: 'Electronic',
-    avatarColor: 'primary',
-    subtitle: 'Mobile, Earbuds, TV',
-    avatarIcon: 'bx-mobile-alt',
-  },
-  {
-    amount: '23.8k',
-    title: 'Fashion',
-    avatarColor: 'success',
-    subtitle: 'Tshirt, Jeans, Shoes',
-    avatarIcon: 'bx-closet',
-  },
-  {
-    amount: 849,
-    title: 'Decor',
-    avatarColor: 'info',
-    subtitle: 'Fine Art, Dining',
-    avatarIcon: 'bx-home',
-  },
-  {
-    amount: 99,
-    title: 'Sports',
-    avatarColor: 'secondary',
-    subtitle: 'Football, Cricket Kit',
-    avatarIcon: 'bx-football',
-  },
-]
 
 const moreList = [
   {
@@ -149,52 +116,13 @@ const moreList = [
     </VCardItem>
 
     <VCardText>
-      <div class="d-flex align-center justify-space-between mb-3">
-        <div class="flex-grow-1">
-          <h4 class="text-h4 mb-1">
-            8,258
-          </h4>
-          <span>Total Orders</span>
-        </div>
-
-        <div>
-          <VueApexCharts
-            type="donut"
-            :height="125"
-            width="105"
-            :options="chartOptions"
-            :series="series"
-          />
-        </div>
-      </div>
-
-      <VList class="card-list mt-7">
-        <VListItem
-          v-for="order in orders"
-          :key="order.title"
-        >
-          <template #prepend>
-            <VAvatar
-              rounded
-              variant="tonal"
-              :color="order.avatarColor"
-            >
-              <VIcon :icon="order.avatarIcon" />
-            </VAvatar>
-          </template>
-
-          <VListItemTitle class="mb-1">
-            {{ order.title }}
-          </VListItemTitle>
-          <VListItemSubtitle class="text-disabled">
-            {{ order.subtitle }}
-          </VListItemSubtitle>
-
-          <template #append>
-            <span>{{ order.amount }}</span>
-          </template>
-        </VListItem>
-      </VList>
+      <VueApexCharts
+        class="ma-3"
+        height="350"
+        type="bar"
+        :options="chartOptions"
+        :series="series"
+      />
     </VCardText>
   </VCard>
 </template>

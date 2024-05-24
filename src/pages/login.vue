@@ -35,7 +35,7 @@ export default {
 
         setTimeout(() => {
           alert('Користувач успішно залогінився')
-          router.push({ name: 'user', params: { id } })
+          router.push({ path: 'dashboard' })
         }, 100)
       } catch (err) {
         if (err.response.data.message.split(': ')[0] === 'Email') {
@@ -46,7 +46,7 @@ export default {
 
         setTimeout(() => {
           alert(err.response.data.message)
-          router.push({ path: 'dashboard' })
+
         }, 50)
       }
     }

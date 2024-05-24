@@ -105,20 +105,14 @@ const chartOptions = computed(() => {
             now
           </VChip>
         </div>
-{{notifications}}
         <div>
-          <div class="text-success text-sm">
-            <VIcon
-              icon="bx-up-arrow-alt"
-              size="18"
-              class="me-1"
-            />
-            <span>68.2%</span>
+          <div v-for="notification in notifications">
+            <v-card class="pa-3 d-flex" style="width: 250px;">{{notification.notification}}
+              <div class="ml-3 text-sm">
+                <span class="text-info"> 68.2%</span>
+              </div>
+            </v-card>
           </div>
-
-          <h5 class="text-h5">
-            {{notifications[0]}}
-          </h5>
         </div>
       </div>
 
@@ -126,7 +120,7 @@ const chartOptions = computed(() => {
         <VueApexCharts
           type="line"
           :height="131"
-          width="80%"
+          :width="80"
           :options="chartOptions"
           :series="series"
         />
@@ -134,3 +128,9 @@ const chartOptions = computed(() => {
     </VCardText>
   </VCard>
 </template>
+
+<style scoped>
+ .padding-custom {
+padding: 1.3rem;
+ }
+</style>
