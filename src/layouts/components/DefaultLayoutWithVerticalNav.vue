@@ -57,35 +57,35 @@ const upgradeBanner = computed(() => {
     <template #vertical-nav-content>
       <VerticalNavLink
         :item="{
-          title: 'Температура',
+          title: 'Temperature',
           icon: 'mdi-thermometer',
-          to: '/dashboard',
+          to: '/temperature',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Енергія',
+          title: 'Energy',
           icon: 'mdi-home-lightning-bolt-outline',
-          to: '/dashboard',
+          to: '/energy',
         }"
       />
       <VerticalNavLink
         :item="{
           title: 'Co2',
           icon: 'mdi-molecule-co2',
-          to: '/dashboard',
+          to: '/co2',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Якість води',
+          title: 'Water quality',
           icon: 'mdi-water-circle',
           to: '/dashboard',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Вологість',
+          title: 'Humidity',
           icon: 'mdi-waves-arrow-up',
           to: '/humidity',
         }"

@@ -10,7 +10,7 @@ const props = defineProps({
   },
   humidity: {
     type: Number,
-    required: true,
+    required: false,
   },
 })
 
