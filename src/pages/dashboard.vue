@@ -1,9 +1,9 @@
 <script setup>
-import AnalyticsCongratulations from '@/views/dashboard/AnalyticsCongratulations.vue'
-import AnalyticsFinanceTabs from '@/views/dashboard/AnalyticsFinanceTab.vue'
-import AnalyticsOrderStatistics from '@/views/dashboard/AnalyticsOrderStatistics.vue'
-import AnalyticsProfitReport from '@/views/dashboard/AnalyticsProfitReport.vue'
-import AnalyticsTotalRevenue from '@/views/dashboard/AnalyticsTotalRevenue.vue'
+import AnalyticsCongratulations from '@/views/dashboard/AverageValueInTheHome.vue'
+import AnalyticsFinanceTabs from '@/views/dashboard/Range.vue'
+import AnalyticsOrderStatistics from '@/views/dashboard/Statistics.vue'
+import AnalyticsProfitReport from '@/views/dashboard/Notifications.vue'
+import AnalyticsTotalRevenue from '@/views/dashboard/Chart.vue'
 import AnalyticsTransactions from '@/views/dashboard/AnalyticsTransactions.vue'
 
 // 👉 Images

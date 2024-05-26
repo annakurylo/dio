@@ -1,21 +1,14 @@
 <script setup>
 import {useTheme} from 'vuetify'
 import VerticalNavSectionTitle from '@/@layouts/components/VerticalNavSectionTitle.vue'
-import upgradeBannerDark from '@images/pro/upgrade-banner-dark.png'
-import upgradeBannerLight from '@images/pro/upgrade-banner-light.png'
 import VerticalNavLayout from '@layouts/components/VerticalNavLayout.vue'
 import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
 
 // Components
 import Footer from '@/layouts/components/Footer.vue'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
-import UserProfile from '@/layouts/components/UserProfile.vue'
 
-const vuetifyTheme = useTheme()
 
-const upgradeBanner = computed(() => {
-  return vuetifyTheme.global.name.value === 'light' ? upgradeBannerLight : upgradeBannerDark
-})
 </script>
 
 <template>
@@ -50,11 +43,17 @@ const upgradeBanner = computed(() => {
 
         <NavbarThemeSwitcher class="me-2"/>
 
-        <UserProfile/>
       </div>
     </template>
 
     <template #vertical-nav-content>
+      <VerticalNavLink
+        :item="{
+          title: 'Humidity',
+          icon: 'mdi-waves-arrow-up',
+          to: '/humidity',
+        }"
+      />
       <VerticalNavLink
         :item="{
           title: 'Temperature',
@@ -64,9 +63,9 @@ const upgradeBanner = computed(() => {
       />
       <VerticalNavLink
         :item="{
-          title: 'Energy',
-          icon: 'mdi-home-lightning-bolt-outline',
-          to: '/energy',
+          title: 'Ionization',
+          icon: 'mdi-air-filter',
+          to: '/ionization',
         }"
       />
       <VerticalNavLink
@@ -80,14 +79,14 @@ const upgradeBanner = computed(() => {
         :item="{
           title: 'Water quality',
           icon: 'mdi-water-circle',
-          to: '/dashboard',
+          to: '/water',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Humidity',
-          icon: 'mdi-waves-arrow-up',
-          to: '/humidity',
+          title: 'Dust',
+          icon: 'mdi-weather-dust',
+          to: '/dust',
         }"
       />
       <VerticalNavLink

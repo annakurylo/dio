@@ -1,7 +1,7 @@
 const User = require("../models/UserModel")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
-const { secret } = require("../config")
+const { secret } = require("../data/config")
 
 
 const generateAccessToken = id => {

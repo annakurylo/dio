@@ -15,7 +15,7 @@
                 label="Rooms"
                 height="30"
                 hide-details
-                :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+                :items="['Living Room', 'Kitchen', 'Bedroom', 'Bathroom']"
                 variant="underlined"
               />
             </div>
@@ -26,7 +26,7 @@
         <VueApexCharts
           class="ma-3"
           type="area"
-          height="350"
+          height="300"
           width="800"
           :options="chartOptions"
           :series="series"
@@ -76,7 +76,7 @@ const series = ref([{
 const chartOptions = ref({
   chart: {
     type: 'area',
-    height: 350,
+    height: 300,
     zoom: {
       enabled: false
     }
