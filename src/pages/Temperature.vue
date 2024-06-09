@@ -1,15 +1,15 @@
 <script setup>
 import AverageValueInTheHome from '@/views/dashboard/AverageValueInTheHome.vue'
-import Range from '@/views/dashboard/Range.vue'
-import Statistics from '@/views/dashboard/Statistics.vue'
+import Range from '@/views/dashboard/RangeT.vue'
+import Statistics from '@/views/dashboard/StaticticsT.vue'
 import Notifications from '@/views/dashboard/Notifications.vue'
-import Chart from '@/views/dashboard/Chart.vue'
-import HumidityToday from '@/views/dashboard/HumidityToday.vue'
+import ChartT from '@/views/dashboard/ChartT.vue'
+import HumidityToday from '@/views/dashboard/TemperatureToday.vue'
 import living_room from "@images/cards/living_room.png"
 import kitchen from "@images/cards/kitchen.png"
 import bedroom from "@images/cards/bed.png"
 import bathroom from "@images/cards/bathtub.png"
-import HUMIDITY_DATA from './../const/humidity.json'
+import HUMIDITY_DATA from './../@layouts/const/temperature.json'
 
 import { onMounted, ref } from "vue"
 import CardValueNowRoom from "@/views/dashboard/CardValueNowRoom.vue"
@@ -20,10 +20,10 @@ const lastValuesOfRooms = ref([])
 const notifications = ref([])
 
 
-const kitchenHumidity = computed(() => HUMIDITY_DATA.kitchen_humidity)
-const bedroomHumidity = computed(() => HUMIDITY_DATA.bedroom_humidity)
-const livingRoomHumidity = computed(() => HUMIDITY_DATA.living_room_humidity)
-const bathroomHumidity = computed(() => HUMIDITY_DATA.bathroom_humidity)
+const kitchenHumidity = computed(() => HUMIDITY_DATA.kitchen_temperature)
+const bedroomHumidity = computed(() => HUMIDITY_DATA.bedroom_temperature)
+const livingRoomHumidity = computed(() => HUMIDITY_DATA.living_room_temperature)
+const bathroomHumidity = computed(() => HUMIDITY_DATA.bathroom_temperature)
 
 const lastValueOfLivingRoom = computed(() => lastValuesOfRooms.value.find(room => room?.room === "living_room")?.value?.value)
 const lastValueOfBathroom = computed(() => lastValuesOfRooms.value.find(room => room?.room === "bathroom")?.value?.value)
@@ -48,19 +48,19 @@ watch(lastValueOfBedroom, (newValue, oldValue) => {
 
 // Function to check humidity range and push notifications
 function checkHumidityRange(value, room) {
-  if (value < 40) {
+  if (value < 21) {
     notifications.value.push({
       room: room,
-      notification: `Humidify the ${room}`,
-      value: value,
-      color: 'text-error',
-    })
-  } else if (value > 60) {
-    notifications.value.push({
-      room: room,
-      notification: `Dry the ${room}`,
+      notification: `Утепліть ${room}`,
       value: value,
       color: 'text-blue',
+    })
+  } else if (value > 25) {
+    notifications.value.push({
+      room: room,
+      notification: `Cool the ${room}`,
+      value: value,
+      color: 'text-error',
     })
   }
 }
@@ -95,7 +95,7 @@ onMounted(() => {
       cols="12"
       md="8"
     >
-      <AverageValueInTheHome v-bind="{averageValue: currentAverageHumidity, measurement: '%'}" />
+      <AverageValueInTheHome v-bind="{averageValue: currentAverageHumidity, indicator: 'Температура', measurement: '°C'}" />
     </VCol>
 
     <VCol
@@ -109,10 +109,11 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Living room',
+              title: 'Вітальня',
               image: living_room,
-              value: lastValueOfLivingRoom,
-              type: 'humidity'
+              value: 21,
+              type: 'temperature',
+              measure: '°C'
             }"
           />
         </VCol>
@@ -123,10 +124,11 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Kitchen',
+              title: 'Кухня',
               image: kitchen,
-              value: lastValueOfKitchen,
-              type: 'humidity'
+              value: 23,
+              type: 'temperature',
+              measure: '°C'
             }"
           />
         </VCol>
@@ -137,7 +139,7 @@ onMounted(() => {
       cols="12"
       md="8"
     >
-      <Chart />
+      <ChartT />
     </VCol>
     <VCol
       cols="12"
@@ -150,10 +152,11 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind=" {
-              title: 'Bedroom',
+              title: 'Спальня',
               image: bedroom,
-              value: lastValueOfBedroom,
-              type: 'humidity'
+              value: 19,
+              type: 'temperature',
+              measure: '°C'
             }"
           />
         </VCol>
@@ -164,10 +167,11 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Bathroom',
+              title: 'Ванна кімната',
               image: bathroom,
-              value: lastValueOfBathroom,
-              type: 'humidity'
+              value: 21,
+              type: 'temperature',
+              measure: '°C'
             }"
           />
         </VCol>
@@ -179,7 +183,15 @@ onMounted(() => {
           cols="12"
           sm="12"
         >
-          <Notifications :notifications="notifications" />
+          <Notifications
+            :notifications="[{
+              room: 'Bedroom',
+              notification: `Утепліть Спальню`,
+              value: '19',
+              color: 'text-error',
+              measure: '°C'
+            }]"
+          />
         </VCol>
       </VRow>
     </VCol>
@@ -204,10 +216,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind=" {
-              title: 'Max value',
+              title: 'Максимум',
               image: living_room,
-              value: 45,
-              norm: '60% >'
+              value: '25°C',
+              norm: '25°C >'
             }"
           />
         </VCol>
@@ -218,10 +230,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind="{
-              title: 'Min value',
+              title: 'Мінімум',
               image: living_room,
-              value: 35,
-              norm: '40% <'
+              value: '20°C',
+              norm: '21°C <'
             }"
           />
         </VCol>
@@ -234,10 +246,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind=" {
-              title: 'Median',
+              title: 'Медіана',
               image: living_room,
-              value: 39,
-              norm: '40-60 %'
+              value: '23.5°C',
+              norm: '21-25 °C'
             }"
           />
         </VCol>
@@ -248,10 +260,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind="{
-              title: 'Range',
+              title: 'Розмах',
               image: living_room,
-              value: 10,
-              norm: '<20%'
+              value: '5°C',
+              norm: '<=4°C'
 
             }"
           />

@@ -3,8 +3,8 @@ import avatar1 from '@images/avatars/avatar-1.png'
 
 const accountData = {
   avatarImg: avatar1,
-  name: 'Name',
-  email: 'xxxxxx@example.com',
+  name: 'Anna Kurylo',
+  email: 'anna.k.2003.g@gmail.com',
 }
 
 const accountDataLocal = ref(structuredClone(accountData))
@@ -19,7 +19,7 @@ const resetForm = () => {
 <template>
   <VRow>
     <VCol cols="12">
-      <VCard title="Account Details">
+      <VCard title="Деталі облікового запису">
 
         <VDivider />
 
@@ -34,8 +34,8 @@ const resetForm = () => {
               >
                 <VTextField
                   v-model="accountDataLocal.name"
-                  placeholder="name"
-                  label="Name"
+                  placeholder="Anna Kurylo"
+                  label="Ім'я"
                 />
               </VCol>
 
@@ -48,7 +48,7 @@ const resetForm = () => {
                 <VTextField
                   v-model="accountDataLocal.email"
                   label="E-mail"
-                  placeholder="xxxxxx@gmail.com"
+                  placeholder="anna.k.2003.g@gmail.com"
                   type="email"
                 />
               </VCol>
@@ -59,7 +59,7 @@ const resetForm = () => {
                 cols="12"
                 class="d-flex flex-wrap gap-4"
               >
-                <VBtn>Save changes</VBtn>
+                <VBtn>Зберегти зміни</VBtn>
 
                 <VBtn
                   color="secondary"
@@ -67,7 +67,7 @@ const resetForm = () => {
                   type="reset"
                   @click.prevent="resetForm"
                 >
-                  Reset
+                  Скинути
                 </VBtn>
               </VCol>
             </VRow>
@@ -78,12 +78,12 @@ const resetForm = () => {
 
     <VCol cols="12">
       <!-- 👉 Deactivate Account -->
-      <VCard title="Deactivate Account">
+      <VCard title="Деактивувати обліковий запис">
         <VCardText>
           <div>
             <VCheckbox
               v-model="isAccountDeactivated"
-              label="I confirm my account deactivation"
+              label="Я підтверджую деактивацію облікового запису"
             />
           </div>
 
@@ -92,7 +92,7 @@ const resetForm = () => {
             color="error"
             class="mt-3"
           >
-            Deactivate Account
+            Деактивувати обліковий запис
           </VBtn>
         </VCardText>
       </VCard>

@@ -1,12 +1,12 @@
 <script setup>
 import {useTheme} from 'vuetify'
-import VerticalNavSectionTitle from '@/@layouts/components/VerticalNavSectionTitle.vue'
+import VerticalNavSectionTitle from '@layouts/components/VerticalNavSectionTitle.vue'
 import VerticalNavLayout from '@layouts/components/VerticalNavLayout.vue'
 import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
 
 // Components
-import Footer from '@/layouts/components/Footer.vue'
-import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
+import Footer from '@layouts/components/Footer.vue'
+import NavbarThemeSwitcher from '@layouts/components/NavbarThemeSwitcher.vue'
 
 
 </script>
@@ -49,21 +49,21 @@ import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
     <template #vertical-nav-content>
       <VerticalNavLink
         :item="{
-          title: 'Humidity',
+          title: 'Вологість',
           icon: 'mdi-waves-arrow-up',
           to: '/humidity',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Temperature',
+          title: 'Температура',
           icon: 'mdi-thermometer',
           to: '/temperature',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Ionization',
+          title: 'Іонізація',
           icon: 'mdi-air-filter',
           to: '/ionization',
         }"
@@ -77,21 +77,21 @@ import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
       />
       <VerticalNavLink
         :item="{
-          title: 'Water quality',
+          title: 'Якість води',
           icon: 'mdi-water-circle',
           to: '/water',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Dust',
+          title: 'Пил',
           icon: 'mdi-weather-dust',
           to: '/dust',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Account Settings',
+          title: 'Налаштування',
           icon: 'mdi-account-cog-outline',
           to: '/account-settings',
         }"
@@ -100,26 +100,26 @@ import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
       <!-- 👉 Pages -->
       <VerticalNavSectionTitle
         :item="{
-          heading: 'Pages',
+          heading: 'Сторінки',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Login',
+          title: 'Логін',
           icon: 'bx-log-in',
           to: '/login',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Register',
+          title: 'Реєстрація',
           icon: 'bx-user-plus',
           to: '/register',
         }"
       />
       <VerticalNavLink
         :item="{
-          title: 'Error',
+          title: 'Помилка',
           icon: 'bx-info-circle',
           to: '/no-existence',
         }"

@@ -9,7 +9,7 @@ import living_room from "@images/cards/living_room.png"
 import kitchen from "@images/cards/kitchen.png"
 import bedroom from "@images/cards/bed.png"
 import bathroom from "@images/cards/bathtub.png"
-import HUMIDITY_DATA from './../const/humidity.json'
+import HUMIDITY_DATA from './../@layouts/const/humidity.json'
 
 import { onMounted, ref } from "vue"
 import CardValueNowRoom from "@/views/dashboard/CardValueNowRoom.vue"
@@ -46,19 +46,19 @@ watch(lastValueOfBedroom, (newValue, oldValue) => {
   checkHumidityRange(newValue, 'Bedroom')
 })
 
-// Function to check humidity range and push notifications
+// Функція перевірки діапазону вологості та push-повідомлень
 function checkHumidityRange(value, room) {
   if (value < 40) {
     notifications.value.push({
       room: room,
-      notification: `Humidify the ${room}`,
+      notification: `Зволожте ${room}`,
       value: value,
       color: 'text-error',
     })
   } else if (value > 60) {
     notifications.value.push({
       room: room,
-      notification: `Dry the ${room}`,
+      notification: `Висушіть ${room}`,
       value: value,
       color: 'text-blue',
     })
@@ -95,7 +95,7 @@ onMounted(() => {
       cols="12"
       md="8"
     >
-      <AverageValueInTheHome v-bind="{averageValue: currentAverageHumidity, measurement: '%'}" />
+      <AverageValueInTheHome v-bind="{averageValue: currentAverageHumidity, indicator: 'Вологість', measurement: '%'}" />
     </VCol>
 
     <VCol
@@ -109,7 +109,7 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Living room',
+              title: 'Вітальня',
               image: living_room,
               value: lastValueOfLivingRoom,
               type: 'humidity'
@@ -123,10 +123,11 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Kitchen',
+              title: 'Кухня',
               image: kitchen,
               value: lastValueOfKitchen,
-              type: 'humidity'
+              type: 'humidity',
+              measure: '%'
             }"
           />
         </VCol>
@@ -150,7 +151,7 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind=" {
-              title: 'Bedroom',
+              title: 'Спальня',
               image: bedroom,
               value: lastValueOfBedroom,
               type: 'humidity'
@@ -164,7 +165,7 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Bathroom',
+              title: 'Ванна кімната',
               image: bathroom,
               value: lastValueOfBathroom,
               type: 'humidity'
@@ -179,7 +180,15 @@ onMounted(() => {
           cols="12"
           sm="12"
         >
-          <Notifications :notifications="notifications" />
+          <Notifications
+            :notifications="[{
+              room: 'Ванна кімнта',
+              notification: `Висушіть ванну кімнату:`,
+              value: '71',
+              color: 'text-error',
+              measure: '%'
+            }]"
+          />
         </VCol>
       </VRow>
     </VCol>
@@ -204,9 +213,9 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind=" {
-              title: 'Max value',
+              title: 'Максимум',
               image: living_room,
-              value: 45,
+              value: '45%',
               norm: '60% >'
             }"
           />
@@ -218,9 +227,9 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind="{
-              title: 'Min value',
+              title: 'Мінімум',
               image: living_room,
-              value: 35,
+              value: '35%',
               norm: '40% <'
             }"
           />
@@ -234,9 +243,9 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind=" {
-              title: 'Median',
+              title: 'Медіана',
               image: living_room,
-              value: 39,
+              value: '39%',
               norm: '40-60 %'
             }"
           />
@@ -248,10 +257,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind="{
-              title: 'Range',
+              title: 'Розмах',
               image: living_room,
-              value: 10,
-              norm: '<20%'
+              value: '10%',
+              norm: '<=20%'
 
             }"
           />

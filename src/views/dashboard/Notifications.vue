@@ -99,17 +99,17 @@ const chartOptions = computed(() => {
       <div class="d-flex flex-column justify-space-between gap-y-4">
         <div>
           <h6 class="text-h6 text-no-wrap mb-1">
-            Notifications
+            Сповіщення
           </h6>
           <VChip color="warning">
-            now
+            зараз
           </VChip>
         </div>
         <div>
           <div v-for="notification in notifications">
-            <v-card class="pa-3 d-flex" style="width: 250px;">{{notification.notification}}
+            <v-card class="pa-3 d-flex" style="width: 300px;">{{notification.notification}}
               <div class="ml-3 text-sm">
-                <span class="text-info"> 71%</span>
+                <span class="text-info">{{notification.value}}{{notification.measure}}</span>
               </div>
             </v-card>
           </div>
@@ -119,7 +119,7 @@ const chartOptions = computed(() => {
       <div class="h-100 d-flex align-center">
         <VueApexCharts
           type="line"
-          :height="131"
+          :height="100"
           :width="80"
           :options="chartOptions"
           :series="series"

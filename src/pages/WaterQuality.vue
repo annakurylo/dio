@@ -1,17 +1,17 @@
 <script setup>
 import AverageValueInTheHome from '@/views/dashboard/AverageValueInTheHome.vue'
-import Range from '@/views/dashboard/Range.vue'
-import Statistics from '@/views/dashboard/Statistics.vue'
+import Range from '@/views/dashboard/RangeW.vue'
+import Statistics from '@/views/dashboard/StatysticsW.vue'
 import Notifications from '@/views/dashboard/Notifications.vue'
-import Chart from '@/views/dashboard/Chart.vue'
-import HumidityToday from '@/views/dashboard/HumidityToday.vue'
+import ChartW from '@/views/dashboard/ChartW.vue'
+import HumidityToday from '@/views/dashboard/WaterToday.vue'
 import living_room from "@images/cards/living_room.png"
 import kitchen from "@images/cards/kitchen.png"
 import bedroom from "@images/cards/bed.png"
 import bathroom from "@images/cards/bathtub.png"
-import HUMIDITY_DATA from './../const/humidity.json'
+import HUMIDITY_DATA from './../@layouts/const/temperature.json'
 
-import { onMounted, ref } from "vue"
+import {onMounted, ref} from "vue"
 import CardValueNowRoom from "@/views/dashboard/CardValueNowRoom.vue"
 import CardMathAnalytics from "@/views/dashboard/CardMathAnalytics.vue"
 
@@ -20,10 +20,10 @@ const lastValuesOfRooms = ref([])
 const notifications = ref([])
 
 
-const kitchenHumidity = computed(() => HUMIDITY_DATA.kitchen_humidity)
-const bedroomHumidity = computed(() => HUMIDITY_DATA.bedroom_humidity)
-const livingRoomHumidity = computed(() => HUMIDITY_DATA.living_room_humidity)
-const bathroomHumidity = computed(() => HUMIDITY_DATA.bathroom_humidity)
+const kitchenHumidity = computed(() => HUMIDITY_DATA.kitchen_temperature)
+const bedroomHumidity = computed(() => HUMIDITY_DATA.bedroom_temperature)
+const livingRoomHumidity = computed(() => HUMIDITY_DATA.living_room_temperature)
+const bathroomHumidity = computed(() => HUMIDITY_DATA.bathroom_temperature)
 
 const lastValueOfLivingRoom = computed(() => lastValuesOfRooms.value.find(room => room?.room === "living_room")?.value?.value)
 const lastValueOfBathroom = computed(() => lastValuesOfRooms.value.find(room => room?.room === "bathroom")?.value?.value)
@@ -48,19 +48,19 @@ watch(lastValueOfBedroom, (newValue, oldValue) => {
 
 // Function to check humidity range and push notifications
 function checkHumidityRange(value, room) {
-  if (value < 40) {
+  if (value < 21) {
     notifications.value.push({
       room: room,
-      notification: `Humidify the ${room}`,
-      value: value,
-      color: 'text-error',
-    })
-  } else if (value > 60) {
-    notifications.value.push({
-      room: room,
-      notification: `Dry the ${room}`,
+      notification: `Утепліть ${room}`,
       value: value,
       color: 'text-blue',
+    })
+  } else if (value > 25) {
+    notifications.value.push({
+      room: room,
+      notification: `Cool the ${room}`,
+      value: value,
+      color: 'text-error',
     })
   }
 }
@@ -72,15 +72,15 @@ function compareMeasurements(a, b) {
   return dateA - dateB
 }
 
-function getLastValuesOfCertainRoom (room) {
+function getLastValuesOfCertainRoom(room) {
   return room.value.sort(compareMeasurements).at(-1)
 }
 
 onMounted(() => {
-  lastValuesOfRooms.value.push({ room: 'kitchen', value: getLastValuesOfCertainRoom(kitchenHumidity) })
-  lastValuesOfRooms.value.push({ room: 'living_room', value: getLastValuesOfCertainRoom(livingRoomHumidity) })
-  lastValuesOfRooms.value.push({ room: 'bedroom', value: getLastValuesOfCertainRoom(bedroomHumidity) })
-  lastValuesOfRooms.value.push({ room: 'bathroom', value: getLastValuesOfCertainRoom(bathroomHumidity) })
+  lastValuesOfRooms.value.push({room: 'kitchen', value: getLastValuesOfCertainRoom(kitchenHumidity)})
+  lastValuesOfRooms.value.push({room: 'living_room', value: getLastValuesOfCertainRoom(livingRoomHumidity)})
+  lastValuesOfRooms.value.push({room: 'bedroom', value: getLastValuesOfCertainRoom(bedroomHumidity)})
+  lastValuesOfRooms.value.push({room: 'bathroom', value: getLastValuesOfCertainRoom(bathroomHumidity)})
 
   currentAverageHumidity.value = lastValuesOfRooms.value.reduce((acc, number) => acc + number.value.value, 0) / lastValuesOfRooms.value.length
 })
@@ -95,7 +95,8 @@ onMounted(() => {
       cols="12"
       md="8"
     >
-      <AverageValueInTheHome v-bind="{averageValue: currentAverageHumidity, measurement: '%'}" />
+      <AverageValueInTheHome
+        v-bind="{averageValue: 7, indicator: 'Якість води', measurement: 'pH'}"/>
     </VCol>
 
     <VCol
@@ -109,10 +110,11 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Living room',
+              title: `Вітальня (з цієї кімнати немає доступу до води)`,
               image: living_room,
-              value: lastValueOfLivingRoom,
-              type: 'humidity'
+              value: null,
+              type: 'water',
+              measure: ''
             }"
           />
         </VCol>
@@ -123,10 +125,11 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Kitchen',
+              title: 'Кухня',
               image: kitchen,
-              value: lastValueOfKitchen,
-              type: 'humidity'
+              value: 7,
+              type: 'water',
+              measure: 'pH'
             }"
           />
         </VCol>
@@ -137,7 +140,7 @@ onMounted(() => {
       cols="12"
       md="8"
     >
-      <Chart />
+      <ChartW/>
     </VCol>
     <VCol
       cols="12"
@@ -149,11 +152,12 @@ onMounted(() => {
           sm="6"
         >
           <CardValueNowRoom
-            v-bind=" {
-              title: 'Bedroom',
+            v-bind="{
+              title: 'Спальня (з цієї кімнати немає доступу до води)',
               image: bedroom,
-              value: lastValueOfBedroom,
-              type: 'humidity'
+              value: null,
+              type: 'water',
+              measure: ''
             }"
           />
         </VCol>
@@ -164,10 +168,11 @@ onMounted(() => {
         >
           <CardValueNowRoom
             v-bind="{
-              title: 'Bathroom',
+              title: 'Ванна кімната',
               image: bathroom,
-              value: lastValueOfBathroom,
-              type: 'humidity'
+              value: 7,
+              type: 'water',
+              measure: 'pH'
             }"
           />
         </VCol>
@@ -179,7 +184,15 @@ onMounted(() => {
           cols="12"
           sm="12"
         >
-          <Notifications :notifications="notifications" />
+          <Notifications
+            :notifications="[{
+              room: '',
+              notification: `Небезпеки немає`,
+              value: '',
+              color: '',
+              measure: ''
+            }]"
+          />
         </VCol>
       </VRow>
     </VCol>
@@ -188,7 +201,7 @@ onMounted(() => {
       cols="12"
       md="8"
     >
-      <HumidityToday />
+      <HumidityToday/>
     </VCol>
     <VCol
       cols="12"
@@ -204,10 +217,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind=" {
-              title: 'Max value',
+              title: 'Максимум',
               image: living_room,
-              value: 45,
-              norm: '60% >'
+              value: '7.8pH',
+              norm: '8.5pH >'
             }"
           />
         </VCol>
@@ -218,10 +231,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind="{
-              title: 'Min value',
+              title: 'Мінімум',
               image: living_room,
-              value: 35,
-              norm: '40% <'
+              value: '6.9pH',
+              norm: '6.5pH <'
             }"
           />
         </VCol>
@@ -234,10 +247,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind=" {
-              title: 'Median',
+              title: 'Медіана',
               image: living_room,
-              value: 39,
-              norm: '40-60 %'
+              value: '7.4pH',
+              norm: '6.5-8.5 pH'
             }"
           />
         </VCol>
@@ -248,10 +261,10 @@ onMounted(() => {
         >
           <CardMathAnalytics
             v-bind="{
-              title: 'Range',
+              title: 'Розмах',
               image: living_room,
-              value: 10,
-              norm: '<20%'
+              value: '0.9pH',
+              norm: '<=2pH'
 
             }"
           />
@@ -267,7 +280,7 @@ onMounted(() => {
       sm="6"
       order="3"
     >
-      <Statistics />
+      <Statistics/>
     </VCol>
 
     <!-- 👉 Tabs chart -->
@@ -277,7 +290,7 @@ onMounted(() => {
       sm="6"
       order="3"
     >
-      <Range />
+      <Range/>
     </VCol>
   </VRow>
 </template>

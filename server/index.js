@@ -38,10 +38,3 @@ const start = async () => {
 }
 
 start()
-
-
-
-
-
-// const role = new Role({value: "Admin"});
-// role.save();

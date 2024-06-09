@@ -18,10 +18,9 @@ export default {
     const passwordError = ref(false)
 
     const router = useRouter()
-    console.log()
 
-    const pibTest = computed(() => /^[А-ЯІ][а-яі]*\s[А-ЯІ][.](\s)?[А-ЯІ][.]+$/.test(username.value))
-    const emailTest = computed(() => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,8})+$/.test(email.value))
+    const pibTest = computed(() => /^[A-Z][a-z]*\s[A-Z][a-z]*$/.test(username.value))
+    const emailTest = computed(() => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,8})$/.test(email.value))
     const passwordTest = computed(() => /^(?=.*[0-9])(?=.*[!@#$%^&*\\-\\_])[a-zA-Z0-9!@#$%^&*\\-\\_]{6,16}$/.test(password.value))
 
     const regUser = async () => {
@@ -126,10 +125,10 @@ export default {
 
       <VCardText class="pt-2">
         <h5 class="text-h5 mb-1">
-          Analytics journey begins here 🚀
+          Аналітична подорож починається тут 🚀
         </h5>
         <p class="mb-0">
-          Simplify and enjoy managing your smart home app!
+          Спростіть і насолоджуйтеся керуванням додатком розумного дому!
         </p>
       </VCardText>
 
@@ -144,7 +143,7 @@ export default {
               <input
                 id="formName"
                 v-model="username"
-                placeholder="Name"
+                placeholder="Ім'я"
                 type="text"
                 class="v-registration__form-body-item-input"
                 name="name"
@@ -166,7 +165,7 @@ export default {
               <input
                 id="formPassword"
                 v-model="password"
-                placeholder="Password"
+                placeholder="Пароль"
                 type="password"
                 class="v-registration__form-body-item-input"
                 name="password"
@@ -178,7 +177,7 @@ export default {
               type="submit"
               @click="regUser"
             >
-              Submit
+              Зареєструватися
             </VBtn>
           </form>
         </div>
@@ -188,12 +187,12 @@ export default {
           cols="12"
           class="text-center text-base"
         >
-          <span>Already have an account?</span>
+          <span>Вже є аккаунт?</span>
           <RouterLink
             class="text-primary ms-2"
             to="/login"
           >
-            Sign in instead
+            Натомість увійти
           </RouterLink>
         </VCol>
 
@@ -202,7 +201,7 @@ export default {
           class="d-flex align-center"
         >
           <VDivider />
-          <span class="mx-4">or</span>
+          <span class="mx-4">або</span>
           <VDivider />
         </VCol>
 

@@ -2,31 +2,12 @@
 import VueApexCharts from 'vue3-apexcharts'
 import {ref, watch} from "vue";
 
-const selectedRoom = ref('Вітальні')
-
-
-watch(selectedRoom, (newValue, oldValue) => {
-  if(newValue === 'Вітальня') {
-    selectedRoom.value = 'Вітальні'
-  }
-  if(newValue === 'Кухня') {
-    selectedRoom.value = 'Кухні'
-  }
-})
-
-const format = computed(() => {
-  if(selectedRoom.value === 'Вітальня') {
-    selectedRoom.value = 'Вітальні'
-  }
-  if(selectedRoom.value === 'Кухня') {
-    selectedRoom.value = 'Кухні'
-  }
-})
+const selectedRoom = ref('Кухні')
 
 
 let series = ref([{
-  name: 'Yearly Humidity',
-  data: [40, 42, 45, 39, 43, 48]
+  name: 'Yearly Water Quality',
+  data: [7.2, 7, 7.2, 6.9, 6.8, 7]
 }])
 
 
@@ -43,11 +24,11 @@ const generateRandomData = (length, min, max) => {
 
 
 const handleSelectionChange = () => {
-  const randomData = generateRandomData(6, 30, 70)
+  const randomData = generateRandomData(6, 6.5, 8.5)
 
 
   series.value = [{
-    name: 'Річна вологість',
+    name: 'Yearly Temperature',
     data: [...randomData] // Создаем копию массива
   }]
 }
@@ -65,7 +46,7 @@ const chartOptions = computed(() => {
     dataLabels: {
       enabled: true,
       formatter: function (val) {
-        return val + "%";
+        return val + "pH";
       },
       offsetY: -20,
       style: {
@@ -109,13 +90,13 @@ const chartOptions = computed(() => {
       labels: {
         show: false,
         formatter: function (val) {
-          return val + "%";
+          return val + "pH";
         }
       }
 
     },
     title: {
-      text: 'Річна вологість, 2024',
+      text: 'Річна якість води, 2024',
       floating: true,
       offsetY: 330,
       align: 'center',
@@ -134,7 +115,7 @@ const chartOptions = computed(() => {
       <v-card-title>
         <div class="d-flex align-end">
           <span class="text mb-1 w-25">
-           Статистика вологості у {{selectedRoom}}
+            Температурна статистика у {{selectedRoom}}
           </span>
           <v-spacer />
           <VSelect
@@ -143,7 +124,7 @@ const chartOptions = computed(() => {
             label="Кімнати"
             height="30"
             hide-details
-            :items="['Вітальня', 'Кухня', 'Спальня', 'Ванна кімната']"
+            :items="[ 'Кухня', 'Ванна кімната']"
             variant="underlined"
             @update:modelValue="handleSelectionChange"
           />

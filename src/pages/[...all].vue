@@ -1,5 +1,5 @@
 <script setup>
-import ErrorHeader from '@/components/ErrorHeader.vue'
+import ErrorHeader from '@/views/pages/ErrorHeader.vue'
 import misc404 from '@images/pages/404.png'
 </script>
 

@@ -26,16 +26,14 @@ export default {
           email: email.value,
           password: password.value,
         })
-
-        const id = result.data.id
-
+        
         localStorage.setItem('token', result.data.token)
         email.value = ''
         password.value = ''
 
         setTimeout(() => {
           alert('Користувач успішно залогінився')
-          router.push({ path: 'dashboard' })
+          router.push({ path: 'humidity' })
         }, 100)
       } catch (err) {
         if (err.response.data.message.split(': ')[0] === 'Email') {
@@ -82,10 +80,10 @@ export default {
 
       <VCardText class="pt-2">
         <h5 class="text-h5 mb-1 width">
-          Welcome to Smart Home Analytics! 👋🏻
+          Ласкаво просимо до Smart Home Analytics! 👋🏻
         </h5>
         <p class="mb-0 width">
-          Please sign-in to your account and start enjoying managing your smart home app!
+          Будь ласка, увійдіть у свій обліковий запис і почніть насолоджуватися керуванням додатком розумного дому!
         </p>
       </VCardText>
 
@@ -111,7 +109,7 @@ export default {
                     <input
                       id="formPassword"
                       v-model="password"
-                      placeholder="Password"
+                      placeholder="Пароль"
                       type="password"
                       class="v-login__form-body-item-input"
                       name="password"
@@ -125,7 +123,7 @@ export default {
                 <!-- remember me checkbox -->
                 <div class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
                   <VCheckbox
-                    label="Remember me"
+                    label="Запам'ятати мене"
                   />
                 </div>
 
@@ -136,7 +134,7 @@ export default {
                   class="button"
                   @click="logUser"
                 >
-                  Login
+                  Увійти
                 </VBtn>
 
 
@@ -145,12 +143,12 @@ export default {
                 cols="12"
                 class="text-center text-base"
               >
-                <span>New on our platform?</span>
+                <span>Вперше на нашій платформі?</span>
                 <RouterLink
                   class="text-primary ms-2"
                   to="/register"
                 >
-                  Create an account
+                  Зареєструватися
                 </RouterLink>
               </VCol>
 
@@ -159,7 +157,7 @@ export default {
                 class="d-flex align-center"
               >
                 <VDivider />
-                <span class="mx-4">or</span>
+                <span class="mx-4">або</span>
                 <VDivider />
               </VCol>
 

@@ -9,12 +9,12 @@ const activeTab = ref(route.params.tab)
 // tabs
 const tabs = [
   {
-    title: 'Account',
+    title: 'Обліковий запис',
     icon: 'bx-user',
     tab: 'account',
   },
   {
-    title: 'Security',
+    title: 'Безпека',
     icon: 'bx-lock-open',
     tab: 'security',
   },

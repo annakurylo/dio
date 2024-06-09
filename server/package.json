@@ -13,9 +13,12 @@
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "express-sse": "^0.5.3",
     "express-validator": "^6.15.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.22",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.7.5",
+    "ws": "^8.17.0"
   }
 }

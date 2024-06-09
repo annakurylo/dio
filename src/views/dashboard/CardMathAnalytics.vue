@@ -9,13 +9,17 @@ const props = defineProps({
     required: true,
   },
   value: {
-    type: Number,
+    type: String,
     required: false,
   },
   norm: {
     type: String,
     required: false,
   },
+  humidityData: {
+    type: String,
+    required: false,
+  }
 })
 
 </script>
@@ -42,15 +46,14 @@ const props = defineProps({
         {{ props.title }}
       </p>
       <h5 class="text-h5 text-no-wrap mb-3 ">
-        {{ props.value }} %
+        {{ props.value }}
       </h5>
-      <span class="d-flex align-center gap-1 text-sm text-success"
-      >
+      <span class="d-flex align-center gap-1 text-sm text-success">
         <VIcon
           size="18"
           icon="mdi-cloud-percent"
         />
-        Norm: {{props.norm}}
+        Норма: {{ props.norm }}
       </span>
     </VCardText>
   </VCard>

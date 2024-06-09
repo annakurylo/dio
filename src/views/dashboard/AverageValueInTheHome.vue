@@ -11,7 +11,12 @@ const props = defineProps({
   measurement: {
     type: String,
     default: '',
+  },
+  indicator: {
+    type: String,
+    default: '',
   }
+
 })
 
 const currentDate = ref('')
@@ -21,8 +26,8 @@ function updateDateTime (){
   const now = new Date()
   const options = { year: 'numeric', month: 'long', day: 'numeric' }
 
-  currentDate.value = now.toLocaleDateString('en-US', options)
-  currentTime.value = now.toLocaleTimeString('en-US')
+  currentDate.value = now.toLocaleDateString('uk-UA', options)
+  currentTime.value = now.toLocaleTimeString('uk-UA')
 };
 
 
@@ -44,7 +49,7 @@ onMounted(() => {
       >
         <VCardItem>
           <VCardTitle class="text-md-h5 text-primary card">
-            Humidity <br> in the Home
+            {{props.indicator}} <br> в будинку зараз
           </VCardTitle>
         </VCardItem>
 
@@ -62,7 +67,7 @@ onMounted(() => {
         align-self="center"
         class="text-center"
       >
-        <VCardText >{{ currentDate }} <br>{{ currentTime }}</VCardText>
+        <VCardText >{{ currentDate }}</VCardText>
       </VCol>
       <VCol
         cols="12"
@@ -104,6 +109,6 @@ onMounted(() => {
   height: 100%;
 }
 .average-value {
-  font-size: 40px;
+  font-size: 35px;
 }
 </style>

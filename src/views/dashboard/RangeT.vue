@@ -178,13 +178,13 @@ const series = [
 const chartOptions = {
   chart: {
     height: 350,
-      type: 'rangeArea',
-      animations: {
+    type: 'rangeArea',
+    animations: {
       speed: 500
     }
   },
   colors: ['#d4526e', '#33b2df', '#d4526e', '#33b2df'],
-    dataLabels: {
+  dataLabels: {
     enabled: false
   },
   fill: {
@@ -195,12 +195,12 @@ const chartOptions = {
   },
   stroke: {
     curve: 'straight',
-      width: [0, 0, 2, 2]
+    width: [0, 0, 2, 2]
   },
   legend: {
     show: true,
-      customLegendItems: ['Team B', 'Team A'],
-      inverseOrder: true
+    customLegendItems: ['Team B', 'Team A'],
+    inverseOrder: true
   },
   title: {
     text: 'Range Area with Forecast Line (Combo)'
@@ -219,7 +219,7 @@ const chartOptions = {
       <v-card-title>
         <div class="d-flex align-end">
           <span class="text mb-1 w-25">
-            Діаграма діапазону вологості у Вітальні
+            Діаграма діапазону температур у Вітальні
           </span>
           <v-spacer />
           <VSelect
@@ -234,13 +234,13 @@ const chartOptions = {
       </v-card-title>
     </VCardItem>
     <VCardText class="px-0">
-      <img width="550" height="385" src="./humidity.png" alt="">
+      <img width="550" height="385" src="./temperature.png" alt="">
     </VCardText>
   </VCard>
 </template>
 
 <style lang="scss" scoped>
 .graphic {
-  background-image: url('humidity.png')
+  background-image: url('temperature.png')
 }
 </style>

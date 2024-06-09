@@ -3,10 +3,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', redirect: '/dashboard' },
+    { path: '/', redirect: '/humidity' },
     {
       path: '/',
-      component: () => import('../layouts/default.vue'),
+      component: () => import('@layouts/default.vue'),
       children: [
         {
           path: 'co2',
@@ -30,7 +30,7 @@ const router = createRouter({
         },
         {
           path: 'dust',
-          component: () => import('../pages/dust.vue'),
+          component: () => import('../pages/Dust.vue'),
         },
         {
           path: 'account-settings',
@@ -40,7 +40,7 @@ const router = createRouter({
     },
     {
       path: '/',
-      component: () => import('../layouts/blank.vue'),
+      component: () => import('@layouts/blank.vue'),
       children: [
         {
           path: 'login',

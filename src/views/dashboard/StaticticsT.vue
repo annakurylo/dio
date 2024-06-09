@@ -5,28 +5,9 @@ import {ref, watch} from "vue";
 const selectedRoom = ref('Вітальні')
 
 
-watch(selectedRoom, (newValue, oldValue) => {
-  if(newValue === 'Вітальня') {
-    selectedRoom.value = 'Вітальні'
-  }
-  if(newValue === 'Кухня') {
-    selectedRoom.value = 'Кухні'
-  }
-})
-
-const format = computed(() => {
-  if(selectedRoom.value === 'Вітальня') {
-    selectedRoom.value = 'Вітальні'
-  }
-  if(selectedRoom.value === 'Кухня') {
-    selectedRoom.value = 'Кухні'
-  }
-})
-
-
 let series = ref([{
-  name: 'Yearly Humidity',
-  data: [40, 42, 45, 39, 43, 48]
+  name: 'Yearly Temperature',
+  data: [20, 21, 22, 22, 23, 22]
 }])
 
 
@@ -43,11 +24,11 @@ const generateRandomData = (length, min, max) => {
 
 
 const handleSelectionChange = () => {
-  const randomData = generateRandomData(6, 30, 70)
+  const randomData = generateRandomData(6, 19, 26)
 
 
   series.value = [{
-    name: 'Річна вологість',
+    name: 'Yearly Temperature',
     data: [...randomData] // Создаем копию массива
   }]
 }
@@ -65,7 +46,7 @@ const chartOptions = computed(() => {
     dataLabels: {
       enabled: true,
       formatter: function (val) {
-        return val + "%";
+        return val + "°C";
       },
       offsetY: -20,
       style: {
@@ -115,7 +96,7 @@ const chartOptions = computed(() => {
 
     },
     title: {
-      text: 'Річна вологість, 2024',
+      text: 'Річна температура, 2024',
       floating: true,
       offsetY: 330,
       align: 'center',
@@ -134,7 +115,7 @@ const chartOptions = computed(() => {
       <v-card-title>
         <div class="d-flex align-end">
           <span class="text mb-1 w-25">
-           Статистика вологості у {{selectedRoom}}
+            Температурна статистика у {{selectedRoom}}
           </span>
           <v-spacer />
           <VSelect

@@ -9,25 +9,25 @@ import { hexToRgb } from '@layouts/utils'
 const vuetifyTheme = useTheme()
 const display = useDisplay()
 
-const humidityData = [41, 41, 41, 71]
+const humidityData = [10, 10, 10, 10]
 
 const chartSeriesOfMap = [{
   data: [
     {
       x: 'Кухня',
-      y: 41,
+      y: 10,
     },
     {
       x: 'Вітальня',
-      y: 41,
+      y: 10,
     },
     {
       x: 'Ванна кімната',
-      y: 41,
+      y: 10,
     },
     {
       x: 'Спальня',
-      y: 71,
+      y: 10,
     },
   ],
 }]
@@ -49,10 +49,10 @@ const chartOptions = {
     pie: {
       dataLabels: {
         offset: -10,
-      },
-    },
+      }
+    }
   },
-  labels: ['Вітальня', 'Кухня', 'Спальня', 'Ванна кімната'],
+  labels: [ 'Кухня', 'Ванна кімната'],
   responsive: [
     {
       breakpoint: 768,
@@ -90,7 +90,7 @@ const chartOptionsOfMap = {
     treemap: {
       distributed: true,
       enableShades: false,
-    },
+    }
   },
   responsive: [
     {
@@ -116,17 +116,18 @@ const chartOptionsOfMap = {
 
 <template>
   <VCard>
-    <VRow>
+    <VRow >
       <VCol
         cols="12"
         sm="7"
         xl="8"
         :class="$vuetify.display.smAndUp ? 'border-e' : 'border-b'"
       >
-        <!--        Кругова діаграма -->
         <VCardItem class="pb-0">
-          <VCardTitle>Розподіл вологості зараз</VCardTitle>
+          <VCardTitle>Розподіл пилу зараз</VCardTitle>
         </VCardItem>
+
+        <!-- bar chart -->
         <VueApexCharts
           type="pie"
           :height="336"
@@ -139,7 +140,6 @@ const chartOptionsOfMap = {
         sm="5"
         xl="4"
       >
-        <!--        Діаграма дерево -->
         <VCardItem class="pb-0">
           <VCardTitle>Дерево Діаграма</VCardTitle>
         </VCardItem>
